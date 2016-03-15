@@ -64,8 +64,10 @@ Plugin 'tpope/vim-surround'
 Bundle 'joonty/vdebug.git'
 Bundle 'chase/vim-ansible-yaml'
 Plugin 'altercation/vim-colors-solarized'
-"Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-notes'
+Plugin 'matze/vim-move'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -128,3 +130,5 @@ let g:easytags_file = '/var/www/tags'
 let g:easytags_async = 1
 let g:easytags_events = ['BufWritePost']
 let g:easytags_autorecurse = 1
+
+let g:move_key_modifier = 'C'
