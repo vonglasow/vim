@@ -83,6 +83,10 @@ nnoremap <silent> <C-f> :NERDTreeFind<CR>
 nnoremap <silent> <C-b> :Gblame<CR>
 " nnoremap <silent> <F2> :Calendar<CR>
 
+"Format code
+nnoremap <localleader>fj :%!python -m json.tool<CR>
+nnoremap <silent> <C-Space> :%s/\s\+$//e<CR>
+
 " Tabular.
 nnoremap <localleader>a=  :Tabularize /=<CR>
 vnoremap <localleader>a=  :Tabularize /=<CR>
