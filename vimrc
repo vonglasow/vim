@@ -1,3 +1,7 @@
+if $COLORTERM == 'gnome-terminal'
+      set t_Co=256
+endif
+
 set autoindent
 set backspace=indent,eol,start
 set browsedir=buffer
@@ -65,9 +69,19 @@ Bundle 'joonty/vdebug.git'
 Bundle 'chase/vim-ansible-yaml'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
+"Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-notes'
 Plugin 'matze/vim-move'
+Plugin 'alvan/vim-phpmanual'
+Plugin 'vim-scripts/toggle'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+Plugin '2072/PHP-Indenting-for-VIm'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -134,5 +148,6 @@ let g:easytags_file = '/var/www/tags'
 let g:easytags_async = 1
 let g:easytags_events = ['BufWritePost']
 let g:easytags_autorecurse = 1
+let g:easytags_auto_update = 0
 
 let g:move_key_modifier = 'C'
