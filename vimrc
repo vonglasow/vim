@@ -1,6 +1,7 @@
 if $COLORTERM == 'gnome-terminal'
       set t_Co=256
 endif
+syntax on
 
 set autoindent
 set backspace=indent,eol,start
@@ -65,8 +66,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/calendar.vim'
 Plugin 'tpope/vim-surround'
-Bundle 'joonty/vdebug.git'
-Bundle 'chase/vim-ansible-yaml'
+Plugin 'joonty/vdebug.git'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'xolox/vim-misc'
 "Plugin 'xolox/vim-easytags'
