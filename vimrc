@@ -123,6 +123,9 @@ vnoremap <localleader>a]  :Tabularize /]<CR>
 nnoremap <localleader>sv :source $MYVIMRC<CR>
 nnoremap <localleader>ev :vsplit $MYVIMRC<CR>
 
+let g:airline#extensions#tabline#enabled = 1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " move lines
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -144,9 +147,8 @@ let g:syntastic_php_checkers = ["php", "phpmd", "phpcs"]
 let php_phpdoc_folding = 1
 let php_folding = 1
 
-let g:easytags_file = '/var/www/tags'
+let g:easytags_file = '~/.tags'
 let g:easytags_async = 1
-let g:easytags_events = ['BufWritePost']
 let g:easytags_autorecurse = 1
 let g:easytags_auto_update = 0
 
