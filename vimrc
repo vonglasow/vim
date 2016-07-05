@@ -70,14 +70,23 @@ Plugin 'joonty/vdebug.git'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-notes'
 Plugin 'matze/vim-move'
 Plugin 'alvan/vim-phpmanual'
 Plugin 'vim-scripts/toggle'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/unite-outline'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'tsukkee/unite-tag'
+Plugin 'brookhong/cscope.vim'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'othree/xml.vim'
+Plugin 'hoaproject/Contributions-Vim-Pp'
+Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -154,3 +163,100 @@ let g:easytags_autorecurse = 1
 let g:easytags_auto_update = 0
 
 let g:move_key_modifier = 'C'
+
+
+"Mapping
+inoremap <localleader>alpha   α
+inoremap <localleader>beta    β
+inoremap <localleader>gamma   γ
+inoremap <localleader>delta   δ
+inoremap <localleader>epsilon ε
+inoremap <localleader>zeta    ζ
+inoremap <localleader>eta     η
+inoremap <localleader>theta   θ
+inoremap <localleader>iota    ι
+inoremap <localleader>kappa   κ
+inoremap <localleader>lambda  λ
+inoremap <localleader>mu      μ
+inoremap <localleader>nu      ν
+inoremap <localleader>xi      ξ
+inoremap <localleader>omicron ο
+inoremap <localleader>pi      π
+inoremap <localleader>rho     ρ
+inoremap <localleader>sigma   σ
+inoremap <localleader>tau     τ
+inoremap <localleader>upsilon υ
+inoremap <localleader>phi     φ
+inoremap <localleader>chi     χ
+inoremap <localleader>psi     ψ
+inoremap <localleader>omega   ω
+
+inoremap <localleader>Alpha   Α
+inoremap <localleader>Beta    Β
+inoremap <localleader>Gamma   Γ
+inoremap <localleader>Delta   Δ
+inoremap <localleader>Epsilon Ε
+inoremap <localleader>Zeta    Ζ
+inoremap <localleader>Eta     Η
+inoremap <localleader>Theta   Θ
+inoremap <localleader>Iota    Ι
+inoremap <localleader>Kappa   Κ
+inoremap <localleader>Lambda  Λ
+inoremap <localleader>Mu      Μ
+inoremap <localleader>Nu      Ν
+inoremap <localleader>Xi      Ξ
+inoremap <localleader>Omicron Ο
+inoremap <localleader>Pi      Π
+inoremap <localleader>Rho     Ρ
+inoremap <localleader>Sigma   Σ
+inoremap <localleader>Tau     Τ
+inoremap <localleader>Upsilon Υ
+inoremap <localleader>Phi     Φ
+inoremap <localleader>Chi     Χ
+inoremap <localleader>Psi     Ψ
+inoremap <localleader>Omega   Ω
+
+inoremap <localleader>in     ∈
+inoremap <localleader>forall ∀
+inoremap <localleader>exists ∃
+inoremap <localleader>C      ℂ
+inoremap <localleader>N      ℕ
+inoremap <localleader>P      ℙ
+inoremap <localleader>Q      ℚ
+inoremap <localleader>R      ℝ
+inoremap <localleader>Z      ℤ
+inoremap <localleader>+-     ±
+inoremap <localleader>/=     ≠
+inoremap <localleader>t      ⊤
+inoremap <localleader>b      ⊥
+inoremap <localleader><      〱
+inoremap <localleader>plus   +
+inoremap <localleader>minus  −
+inoremap <localleader>times  ×
+inoremap <localleader>and    ⋀
+inoremap <localleader>or     ⋁
+inoremap <localleader>union  ∪
+inoremap <localleader>intersection ∩
+
+inoremap <localleader>up        ↑
+inoremap <localleader>right     →
+inoremap <localleader>down      ↓
+inoremap <localleader>left      ←
+inoremap <localleader>leftright ↔
+inoremap <localleader>updown    ↕
+
+inoremap <localleader>check   ✔️
+inoremap <localleader>uncheck ❌
+inoremap <localleader>+1      👍
+inoremap <localleader>-1      👎
+inoremap <localleader>then    👉
+inoremap <localleader>pin     📌
+inoremap <localleader>book    📖
+inoremap <localleader>;-)     😉
+inoremap <localleader>:-)     😄
+inoremap <localleader>:-(     😞
+inoremap <localleader>love    ❤
+inoremap <localleader>poo     💩
+inoremap <localleader>qed     ￭
+inoremap <localleader>lock    🔒
+inoremap <localleader>warning ⚠️
