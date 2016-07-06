@@ -3,6 +3,10 @@ if $COLORTERM == 'gnome-terminal'
 endif
 syntax on
 
+if &diff
+    colorscheme koehler
+endif
+
 set autoindent
 set backspace=indent,eol,start
 set browsedir=buffer
