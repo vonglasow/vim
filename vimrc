@@ -81,7 +81,6 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/unite-outline'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tsukkee/unite-tag'
-Plugin 'brookhong/cscope.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'othree/xml.vim'
@@ -135,14 +134,6 @@ nnoremap <localleader>ev :vsplit $MYVIMRC<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" move lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
 
 if executable('ag')
   let g:ackprg = 'ag -i --nogroup --nocolor --column -p ~/.agignore'
