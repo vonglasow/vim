@@ -79,11 +79,12 @@ Plugin 'matze/vim-move'
 Plugin 'alvan/vim-phpmanual'
 Plugin 'vim-scripts/toggle'
 Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'shawncplus/phpcomplete.vim'
+"Plugin 'shawncplus/phpcomplete.vim'
 "Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/unite-outline'
-Plugin 'Shougo/vimproc.vim'
+"Plugin 'm2mdas/phpcomplete-extended'
 Plugin 'tsukkee/unite-tag'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'StanAngeloff/php.vim'
@@ -95,6 +96,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'Konfekt/FastFold'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -159,6 +161,11 @@ let g:easytags_auto_update = 0
 
 let g:move_key_modifier = 'C'
 
+"Fastfold
+let g:vimsyn_folding='af'
+let g:xml_syntax_folding = 1
+let g:php_folding = 1
+let g:perl_fold = 1
 
 "Mapping
 inoremap <localleader>alpha   α
