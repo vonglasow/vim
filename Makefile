@@ -22,14 +22,17 @@ help:
 
 all: vim
 
-vim: ~/.vim ~/.vimrc
+vim: /usr/bin/cmake ~/.vimrc ~/.vim
+
+/usr/bin/cmake:
+	sudo apt install cmake
 
 ~/.vimrc:
 	ln -s $(CURDIR)/vimrc $@
 
 ~/.vim:
 	@echo 'Deploy vim config'
-	ln -s $(CURDIR)/vim $@
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
 	cd ~/.vim/bundle/YouCompleteMe && ./install.py
 

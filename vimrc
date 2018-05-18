@@ -7,13 +7,15 @@ if &diff
     colorscheme koehler
 endif
 
+colorscheme koehler
+
 set autoindent
 set backspace=indent,eol,start
 set browsedir=buffer
 set cmdheight=1
 set completeopt=menu,preview
-set cursorcolumn
-set cursorline
+"set cursorcolumn
+"set cursorline
 set encoding=utf-8
 set expandtab
 set fileencodings=utf-8
@@ -27,7 +29,7 @@ set ignorecase
 set incsearch
 set keymodel=startsel
 set laststatus=2
-set lcs=tab:\|\ ,trail:-,precedes:←,extends:➜,nbsp:˽
+set lcs=tab:\|\ ,trail:-,precedes:←,extends:➜,nbsp:˽,eol:¬
 set list
 set modeline
 set nobackup
@@ -55,10 +57,13 @@ set winminheight=0
 set winminwidth=0
 set whichwrap=<,>,h,l,[,]
 set tags=.tags;/
+set nospell
+set spelllang=en_us
 
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sheerun/vim-polyglot'
@@ -79,12 +84,11 @@ Plugin 'matze/vim-move'
 Plugin 'alvan/vim-phpmanual'
 Plugin 'vim-scripts/toggle'
 Plugin 'JamshedVesuna/vim-markdown-preview'
-"Plugin 'shawncplus/phpcomplete.vim'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'Shougo/vimproc.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/unite-outline'
-"Plugin 'm2mdas/phpcomplete-extended'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'tsukkee/unite-tag'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'StanAngeloff/php.vim'
@@ -96,12 +100,25 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'Konfekt/FastFold'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'vim-scripts/LanguageTool'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'https://github.com/fwip/vim-jira.git'
+Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'morhetz/gruvbox'
+Plugin 'w0ng/vim-hybrid.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 let maplocalleader = ','
+
+"LanguageTool
+
+let g:languagetool_jar='/opt/LanguageTool-3.6-SNAPSHOT/languagetool-commandline.jar'
+
+"BufferGator
+nnoremap <silent> <S-Tab> :BuffergatorToggle<CR>
 
 nnoremap <silent> <C-Up> <C-W>W
 nnoremap <silent> <C-Left> <C-W>h
@@ -112,9 +129,20 @@ nnoremap <silent> <C-f> :NERDTreeFind<CR>
 nnoremap <silent> <C-b> :Gblame<CR>
 " nnoremap <silent> <F2> :Calendar<CR>
 
+let g:solarized_termcolors= 16
+let g:solarized_termtrans = 0
+let g:solarized_degrade = 0
+let g:solarized_bold = 1
+let g:solarized_underline = 1
+let g:solarized_italic = 1
+let g:solarized_contrast = "normal"
+let g:solarized_visibility= "normal"
+
 "Format code
 nnoremap <localleader>fj :%!python -m json.tool<CR>
 nnoremap <silent> <C-Space> :%s/\s\+$//e<CR>
+nnoremap <silent> <C-t> xph
+"nnoremap <silent> <C-t> "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:noh<CR>
 
 " Tabular.
 nnoremap <localleader>a=  :Tabularize /=<CR>
@@ -161,11 +189,13 @@ let g:easytags_auto_update = 0
 
 let g:move_key_modifier = 'C'
 
-"Fastfold
-let g:vimsyn_folding='af'
-let g:xml_syntax_folding = 1
-let g:php_folding = 1
-let g:perl_fold = 1
+let g:php_cs_fixer_enable_default_mapping = 1
+let g:php_cs_fixer_level = "all"
+
+let g:gitgutter_highlight_lines = 1
+
+nnoremap <silent><localleader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><localleader>pcf :call PhpCsFixerFixFile()<CR>
 
 "Mapping
 inoremap <localleader>alpha   α
@@ -262,3 +292,4 @@ inoremap <localleader>poo     💩
 inoremap <localleader>qed     ￭
 inoremap <localleader>lock    🔒
 inoremap <localleader>warning ⚠️
+inoremap <localleader>etc     …
