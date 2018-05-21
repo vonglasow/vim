@@ -3,12 +3,6 @@ if $COLORTERM == 'gnome-terminal'
 endif
 syntax on
 
-if &diff
-    colorscheme koehler
-endif
-
-colorscheme koehler
-
 set autoindent
 set backspace=indent,eol,start
 set browsedir=buffer
@@ -23,7 +17,8 @@ set fileformats=unix,mac,dos
 set fillchars+=vert:\+
 set fillchars-=vert:\|
 set foldclose=
-set foldmethod=syntax
+set foldenable
+set foldmethod=marker
 set hlsearch
 set ignorecase
 set incsearch
@@ -36,29 +31,33 @@ set nobackup
 set nobomb
 set nocompatible
 set noerrorbells
+set nospell
 set noswapfile
 set novisualbell
 set nowrap
 set nrformats=octal,hex,alpha
 set nu
 set selection=inclusive
+set shiftround
 set shiftwidth=4
 set showmatch
+set smartindent
+set smarttab
 set softtabstop=4
+set spelllang=en_us
 set tabstop=4
+set tags=.tags;/
+set textwidth=80
 set title
 set ttyfast
 "set viminfo='20,\"50,:20,%,n~/.viminfo
-set wildmenu
-set wildmode=longest:full
+set whichwrap=<,>,h,l,[,]
 set wildchar=<Tab>
 set wildcharm=<C-Z>
+set wildmenu
+set wildmode=longest:full
 set winminheight=0
 set winminwidth=0
-set whichwrap=<,>,h,l,[,]
-set tags=.tags;/
-set nospell
-set spelllang=en_us
 
 filetype off                  " required
 
@@ -107,11 +106,19 @@ Plugin 'https://github.com/fwip/vim-jira.git'
 Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'morhetz/gruvbox'
 Plugin 'w0ng/vim-hybrid.git'
+Plugin 'tomasr/molokai'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 let maplocalleader = ','
+cmap w!! w !sudo tee % >/dev/null
+
+if &diff
+    colorscheme molokai
+endif
+
+colorscheme molokai
 
 "LanguageTool
 
@@ -128,6 +135,14 @@ nnoremap <silent> <Tab> :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :NERDTreeFind<CR>
 nnoremap <silent> <C-b> :Gblame<CR>
 " nnoremap <silent> <F2> :Calendar<CR>
+
+" NERDTree options
+let NERDChristmasTree=1
+let NERDTreeCaseSensitiveSort=1
+let NERDTreeChDirMode=2
+let NERDTreeShowBookmarks=0
+let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=0
 
 let g:solarized_termcolors= 16
 let g:solarized_termtrans = 0
