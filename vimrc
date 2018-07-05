@@ -82,9 +82,9 @@ Plugin 'xolox/vim-notes'
 Plugin 'matze/vim-move'
 Plugin 'alvan/vim-phpmanual'
 Plugin 'vim-scripts/toggle'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/unite-outline'
 Plugin 'Shougo/vimproc.vim'
@@ -115,10 +115,10 @@ let maplocalleader = ','
 cmap w!! w !sudo tee % >/dev/null
 
 if &diff
-    colorscheme molokai
+    colorscheme koehler
 endif
 
-colorscheme molokai
+colorscheme koehler
 
 "LanguageTool
 
@@ -184,8 +184,8 @@ nnoremap <localleader>ev :vsplit $MYVIMRC<CR>
 let g:airline#extensions#tabline#enabled = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-if executable('ag')
-  let g:ackprg = 'ag -i --nogroup --nocolor --column -p ~/.agignore'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
 endif
 
 let g:calendar_google_calendar = 1
@@ -207,7 +207,28 @@ let g:move_key_modifier = 'C'
 let g:php_cs_fixer_enable_default_mapping = 1
 let g:php_cs_fixer_level = "all"
 
-let g:gitgutter_highlight_lines = 1
+let g:gitgutter_highlight_lines = 0
+
+autocmd BufNewFile,BufReadPost *.md setl ts=4 sw=4 sts=4 expandtab
+
+" disable folding
+let g:vim_markdown_folding_disabled = 1
+
+" Allow for the TOC window to auto-fit when it's possible for it to shrink.
+" It never increases its default size (half screen), it only shrinks.
+let g:vim_markdown_toc_autofit = 1
+
+" Disable conceal
+let g:vim_markdown_conceal = 0
+
+" Allow the ge command to follow named anchors in links of the form
+" file#anchor or just #anchor, where file may omit the .md extension as usual
+let g:vim_markdown_follow_anchor = 1
+
+" highlight frontmatter
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
 
 nnoremap <silent><localleader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><localleader>pcf :call PhpCsFixerFixFile()<CR>
