@@ -62,12 +62,13 @@ set winminwidth=0
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.fzf
+set rtp+=~/github/.fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tyok/nerdtree-ack'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
@@ -107,6 +108,7 @@ Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'morhetz/gruvbox'
 Plugin 'w0ng/vim-hybrid.git'
 Plugin 'tomasr/molokai'
+Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -185,7 +187,7 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
+  let g:ackprg = 'rg --hidden --vimgrep'
 endif
 
 let g:calendar_google_calendar = 1
@@ -329,3 +331,4 @@ inoremap <localleader>qed     ￭
 inoremap <localleader>lock    🔒
 inoremap <localleader>warning ⚠️
 inoremap <localleader>etc     …
+inoremap <localleader>nbsp    ˽
