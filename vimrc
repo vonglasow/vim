@@ -108,7 +108,9 @@ Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'morhetz/gruvbox'
 Plugin 'w0ng/vim-hybrid.git'
 Plugin 'tomasr/molokai'
-Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'b4b4r07/vim-hcl'
+"Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -212,6 +214,7 @@ let g:php_cs_fixer_level = "all"
 let g:gitgutter_highlight_lines = 0
 
 autocmd BufNewFile,BufReadPost *.md setl ts=4 sw=4 sts=4 expandtab
+autocmd BufWritePre * %s/\s\+$//e
 
 " disable folding
 let g:vim_markdown_folding_disabled = 1
